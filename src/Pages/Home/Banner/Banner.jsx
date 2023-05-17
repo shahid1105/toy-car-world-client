@@ -2,7 +2,7 @@ import banner from "../../../assets/images/banner/banner.jpg";
 
 const Banner = () => {
   return (
-    <div className="mb-5">
+    <div>
       <div
         className="hero min-h-screen"
         style={{

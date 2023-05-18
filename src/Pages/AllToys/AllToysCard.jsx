@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AllToysCard = ({ toy }) => {
   const { name, picture, price, rating } = toy;
   return (
@@ -11,7 +13,9 @@ const AllToysCard = ({ toy }) => {
           <p>Price: {price}</p>
           <p>{rating}</p>
           <div className="card-actions">
-            <button className="btn bg-violet-600">View Details</button>
+            <Link to="/details">
+              <button className="btn bg-violet-600">View Details</button>
+            </Link>
           </div>
         </div>
       </div>

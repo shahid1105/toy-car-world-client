@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "picture": "https://i.ibb.co/zx1hmKB/sports-toy-1.png",
+    "name": "Super Speedster",
+    "price": "$19.99",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "picture": "https://i.ibb.co/DLQYHCQ/sports-toy.png",
+    "name": "Turbo Racer",
+    "price": "$24.99",
+    "rating": 4.5
+  },
+  {
+    "id": 3,
+    "picture": "https://i.ibb.co/D9DtMZT/sports-toy.png",
+    "name": "Monster Truck Madness",
+    "price": "$14.99",
+    "rating": 4
+  },
+  {
+    "id": 4,
+    "picture": "https://i.ibb.co/9V4XRH7/truck-toy-3.png",
+    "name": "Off-Road Explorer",
+    "price": "$29.99",
+    "rating": 4.5
+  },
+  {
+    "id": 5,
+    "picture": "https://i.ibb.co/h16fgXH/truck-toy-2.png",
+    "name": "City Cruiser",
+    "price": "$9.99",
+    "rating": 3.5
+  },
+  {
+    "id": 6,
+    "picture": "https://i.ibb.co/crCR1Kt/truck-toy-4.png",
+    "name": "Convertible Joyride",
+    "price": "$12.99",
+    "rating": 4
+  },
+  {
+    "id": 7,
+    "picture": "https://i.ibb.co/phFmnH4/truck-toy.png",
+    "name": "Race Track Champion",
+    "price": "$34.99",
+    "rating": 4.5
+  },
+  {
+    "id": 8,
+    "picture": "https://i.ibb.co/6ZDqBz6/truck-toy-1.png",
+    "name": "Vintage Roadster",
+    "price": "$17.99",
+    "rating": 3.5
+  },
+  {
+    "id": 9,
+    "picture": "https://i.ibb.co/MB86KzD/regular-car.png",
+    "name": "Safari Adventure 4x4",
+    "price": "$21.99",
+    "rating": 4.5
+  },
+  {
+    "id": 10,
+    "picture": "https://i.ibb.co/GV5swx5/regular-car-4.png",
+    "name": "Police Pursuit",
+    "price": "$14.99",
+    "rating": 4
+  },
+  {
+    "id": 11,
+    "picture": "https://i.ibb.co/CwXhyBM/regular-car-3.png",
+    "name": "Stunt Master",
+    "price": "$26.99",
+    "rating": 4.5
+  },
+  {
+    "id": 12,
+    "picture": "https://i.ibb.co/8Y9NrqV/regular-car-2.png",
+    "name": "Adventure Seeker",
+    "price": "$18.99",
+    "rating": 4
+  },
+  {
+    "id": 13,
+    "picture": "https://i.ibb.co/VmdDxKr/regular-car-1.png",
+    "name": "Electric Drifter",
+    "price": "$39.99",
+    "rating": 4.5
+  },
+  {
+    "id": 14,
+    "picture": "https://i.ibb.co/LS27p63/police-toys.png",
+    "name": "Mini Rally",
+    "price": "$11.99",
+    "rating": 3.5
+  },
+  {
+    "id": 15,
+    "picture": "https://i.ibb.co/H44gsB0/police-toy.png",
+    "name": "Fire Rescue",
+    "price": "$16.99",
+    "rating": 4
+  },
+  {
+    "id": 16,
+    "picture": "https://i.ibb.co/S62655G/police-toy-3.png",
+    "name": "Sports Coupe",
+    "price": "$22.99",
+    "rating": 4.5
+  },
+  {
+    "id": 17,
+    "picture": "https://i.ibb.co/mRSqkgy/police-toy-2.png",
+    "name": "Sports Coupe",
+    "price": "$22.99",
+    "rating": 4.5
+  },
+  {
+    "id": 18,
+    "picture": "https://i.ibb.co/4pgFcH1/fire-truck-3.png",
+    "name": "Sports Coupe",
+    "price": "$22.99",
+    "rating": 4.5
+  },
+  {
+    "id": 19,
+    "picture": "https://i.ibb.co/W0KhD8J/fire-truck-5.png",
+    "name": "Sports Coupe",
+    "price": "$22.99",
+    "rating": 4.5
+  },
+  {
+    "id": 20,
+    "picture": "https://i.ibb.co/tz4P0dt/fire-truck.png",
+    "name": "Sports Coupe",
+    "price": "$22.99",
+    "rating": 4.5
+  }
+]

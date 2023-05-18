@@ -11,8 +11,10 @@ const Banner = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="text-base-300">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
+            <h1 className="mb-5 text-5xl font-bold text-violet-400">
+              Toy Car World
+            </h1>
+            <p className="mb-8 mt-10 ps-24 pr-24 ">
               Toy cars are miniature replicas of real vehicles, designed for
               children is play and enjoyment. They are typically made of plastic
               or die-cast metal and come in various shapes, sizes, and colors.

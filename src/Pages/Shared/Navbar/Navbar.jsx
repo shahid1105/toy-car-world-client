@@ -17,27 +17,27 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/" className="font-bold">
+                <Link to="/alltoys" className="font-bold">
                   All Toys
                 </Link>
               </li>
               <li>
-                <Link to="/" className="font-bold">
+                <Link to="/mytoys" className="font-bold">
                   My Toys
                 </Link>
               </li>
               <li>
-                <Link to="/" className="font-bold">
+                <Link to="/addatoys" className="font-bold">
                   Add A Toys
                 </Link>
               </li>
               <li>
-                <Link to="/" className="font-bold">
+                <Link to="/blogs" className="font-bold">
                   Blogs
                 </Link>
               </li>
               <li>
-                <Link to="/" className="font-bold">
+                <Link to="/logout" className="font-bold">
                   Log Out
                 </Link>
               </li>
@@ -61,27 +61,27 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/" className="font-bold">
+              <Link to="/alltoys" className="font-bold">
                 All Toys
               </Link>
             </li>
             <li>
-              <Link to="/" className="font-bold">
+              <Link to="/mytoys" className="font-bold">
                 My Toys
               </Link>
             </li>
             <li>
-              <Link to="/" className="font-bold">
+              <Link to="/addatoys" className="font-bold">
                 Add A Toys
               </Link>
             </li>
             <li>
-              <Link to="/" className="font-bold">
+              <Link to="/blogs" className="font-bold">
                 Blogs
               </Link>
             </li>
             <li>
-              <Link to="/" className="font-bold">
+              <Link to="/logout" className="font-bold">
                 Log Out
               </Link>
             </li>

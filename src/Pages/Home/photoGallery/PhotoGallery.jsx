@@ -34,11 +34,31 @@ const PhotoGallery = () => {
       <div className="mt-8">
         <Tabs>
           <TabList>
-            <Tab>Regular carToys photo</Tab>
-            <Tab>Truck Toys photo</Tab>
-            <Tab>Police carToys photo</Tab>
-            <Tab>Fire truckToys photo</Tab>
-            <Tab>sports Toys photo</Tab>
+            <Tab>
+              <h1 className="text-xl font-bold text-violet-500">
+                Regular carToys photo
+              </h1>
+            </Tab>
+            <Tab>
+              <h1 className="text-xl font-bold text-violet-500">
+                Truck Toys photo
+              </h1>
+            </Tab>
+            <Tab>
+              <h1 className="text-xl font-bold text-violet-500">
+                Police carToys photo
+              </h1>
+            </Tab>
+            <Tab>
+              <h1 className="text-xl font-bold text-violet-500">
+                Fire truckToys photo
+              </h1>
+            </Tab>
+            <Tab>
+              <h1 className="text-xl font-bold text-violet-500">
+                sports Toys photo
+              </h1>
+            </Tab>
           </TabList>
 
           <TabPanel>

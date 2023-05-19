@@ -3,35 +3,52 @@ import { AuthContext } from "../../Providers/AuthProviders";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
+  console.log(user);
 
   const handleAddAToy = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const sellerEmail = form.sellerEmail.value;
-    const sellerName = form.sellerName.value;
+    const seller = form.seller.value;
     const subCategory = form.subCategory.value;
     const rating = form.rating.value;
-    const quantity = form.quantity.value;
+    const availableQuantity = form.availableQuantity.value;
     const description = form.description.value;
     const price = form.price.value;
     const img = form.img.value;
     const addAToy = {
       name,
       sellerEmail,
-      sellerName,
+      seller,
       subCategory,
       rating,
-      quantity,
+      availableQuantity,
       description,
       price,
       img,
     };
     console.log(addAToy);
+
+    fetch("http://localhost:5000/alltoys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addAToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          alert("Add a toy successfully");
+        }
+      });
   };
 
   return (
-    <div>
+    <div className="bg-base-200 p-8">
+      <h1 className="text-3xl font-bold text-center mb-8 mt-8">Add A Toy</h1>
       <form onSubmit={handleAddAToy}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <div className="form-control">
@@ -61,8 +78,9 @@ const AddAToy = () => {
               <span className="label-text">Seller Name</span>
             </label>
             <input
+              defaultValue={user?.name}
               type="text"
-              name="sellerName"
+              name="seller"
               placeholder="Seller Name"
               className="input input-bordered"
             />
@@ -108,7 +126,7 @@ const AddAToy = () => {
             </label>
             <input
               type="text"
-              name="quantity"
+              name="availableQuantity"
               placeholder="Available Quantity"
               className="input input-bordered"
             />

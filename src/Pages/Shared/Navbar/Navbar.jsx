@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo/logo.png";
 import profile from "../../../assets/images/profile/profile.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProviders";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user?.email);
   return (
     <div>
       <div className="navbar bg-base-100 h-28">
@@ -37,9 +41,15 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/logout" className="font-bold">
-                  Log Out
-                </Link>
+                {user ? (
+                  <>
+                    <span className="text-red-500">{user.email}</span>
+                  </>
+                ) : (
+                  <Link>
+                    <button>Login</button>
+                  </Link>
+                )}
               </li>
             </ul>
           </div>

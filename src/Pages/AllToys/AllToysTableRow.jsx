@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 const AllToysTableRow = ({ toy }) => {
-  const { name, subCategory, availableQuantity, price } = toy;
+  const { name, subCategory, availableQuantity, price, seller } = toy;
   return (
     <tr>
       <td>
         <div className="flex items-center space-x-3">
           <div>
-            <div className="font-bold"></div>
+            <div className="font-bold">{seller}</div>
           </div>
         </div>
       </td>
@@ -16,8 +16,8 @@ const AllToysTableRow = ({ toy }) => {
       <td>{price}</td>
       <td>{availableQuantity}</td>
       <th>
-        <Link to="details">
-          <button className="btn btn-ghost btn-xs">details</button>
+        <Link to="/details">
+          <button className="btn btn-sm">details</button>
         </Link>
       </th>
     </tr>

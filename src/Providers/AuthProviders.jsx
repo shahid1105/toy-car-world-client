@@ -7,11 +7,12 @@ import {
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProviders = ({ children }) => {
-  const [toyCar, setToyCar] = useState(null);
+  const [user, setUser] = useState(null);
+
   const [loading, setLoading] = useState(true);
 
   const createToyCarUser = (email, password) => {
@@ -26,8 +27,8 @@ const AuthProviders = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setToyCar(currentUser);
       console.log("current user", currentUser);
+      setUser(currentUser);
       setLoading(false);
     });
     return () => {
@@ -36,7 +37,7 @@ const AuthProviders = ({ children }) => {
   }, []);
 
   const authInfo = {
-    toyCar,
+    user,
     loading,
     createToyCarUser,
     signIn,

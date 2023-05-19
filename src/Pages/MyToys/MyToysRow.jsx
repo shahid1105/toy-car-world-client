@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
-
-const MyToysRow = ({ myToy }) => {
-  const { seller, name, subCategory, availableQuantity, price, img } =
+const MyToysRow = ({ myToy, handleDelete }) => {
+  const { _id, seller, name, subCategory, availableQuantity, price, img } =
     myToy || {};
+
   return (
     <>
       <tr>
@@ -21,14 +20,26 @@ const MyToysRow = ({ myToy }) => {
         <td>{price}</td>
         <td>{availableQuantity}</td>
         <th>
-          <Link to="/details">
-            <button className="btn btn-sm">details</button>
-          </Link>
+          <button className="btn btn-sm">Update</button>
         </th>
         <th>
-          <Link to="/details">
-            <button className="btn btn-sm">details</button>
-          </Link>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn btn-square btn-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </th>
       </tr>
     </>

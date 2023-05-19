@@ -1,41 +1,77 @@
+import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import SubCategories from "./SubCategory/SubCategories";
 
 const Category = () => {
+  const [categorys, setCategory] = useState([]);
+  const [activeTab, setActiveTab] = useState("Regular carToys");
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/alltoys/${activeTab}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCategory(data);
+        console.log(data);
+      });
+  }, [activeTab]);
+
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
   return (
-    <div>
-      <h2>this is a category tab </h2>
+    <div className="mt-8">
+      <h2 className="text-center text-5xl font-bold text-orange-400 mb-24">
+        Shop by category
+      </h2>
       <Tabs>
         <TabList>
-          <Tab>Title 1</Tab>
-          <Tab>Title 2</Tab>
-          <Tab>Title 3</Tab>
-          <Tab>Title 4</Tab>
-          <Tab>Title 5</Tab>
+          <Tab>
+            <h1
+              onClick={() => handleTabClick("Regular carToys")}
+              className="text-xl font-bold text-orange-400">
+              Regular carToys
+            </h1>
+          </Tab>
+          <Tab>
+            <h1
+              onClick={() => handleTabClick("Truck Toys")}
+              className="text-xl font-bold text-orange-400">
+              Truck Toys
+            </h1>
+          </Tab>
+          <Tab>
+            <h1
+              onClick={() => handleTabClick("Police carToys")}
+              className="text-xl font-bold text-orange-400">
+              Police carToys
+            </h1>
+          </Tab>
+          <Tab>
+            <h1
+              onClick={() => handleTabClick("Fire truckToys")}
+              className="text-xl font-bold text-orange-400">
+              Fire truckToys
+            </h1>
+          </Tab>
+          <Tab>
+            <h1
+              onClick={() => handleTabClick("sports Toys")}
+              className="text-xl font-bold text-orange-400">
+              sports Toys
+            </h1>
+          </Tab>
         </TabList>
 
         <TabPanel>
-          <div className="bg-base-200">
-            <div className="card w-96 bg-base-100 shadow-xl">
-              <figure className="px-10 pt-10">
-                <img
-                  src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                  className="rounded-xl"
-                />
-              </figure>
-              <div className="card-body items-center text-center">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {categorys.map((category) => (
+              <SubCategories
+                key={category._id}
+                category={category}></SubCategories>
+            ))}
           </div>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 2</h2>
         </TabPanel>
         <TabPanel>
           <h2>Any content 3</h2>

@@ -71,8 +71,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/addatoys" className="font-bold">
-                Add A Toys
+              <Link to="/addatoy" className="font-bold">
+                Add A Toy
               </Link>
             </li>
             <li>

@@ -1,14 +1,25 @@
 import { useEffect, useState } from "react";
-import AllToysCard from "./AllToysCard";
+import AllToysTableRow from "./AllToysTableRow";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:5000/alltoys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
+
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/search/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setToys(data);
+      });
+  };
+
   return (
     <div>
       <div className="text-center mt-5 mb-12">
@@ -23,11 +34,43 @@ const AllToys = () => {
           storytelling. Ultimately, toy cars are a beloved and timeless playtime
           favorite for kids.
         </p>
+        <div className="mt-8">
+          <input
+            onChange={(e) => setSearchText(e.target.value)}
+            className="bg-base-200 p-3 rounded-md font-bold text-xl mr-2"
+            type="search"
+            placeholder="Search"
+            name=""
+            id=""
+          />
+          <button
+            onClick={handleSearch}
+            className="btn btn-active btn-ghost font-bold text-xl p-2">
+            Search
+          </button>
+        </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {toys.map((toy) => (
-          <AllToysCard key={toy.id} toy={toy}></AllToysCard>
-        ))}
+
+      <div>
+        <table className="table w-full">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>Seller</th>
+              <th>ToyName</th>
+              <th>SubCategory</th>
+              <th>Price</th>
+              <th>AvailableQuantity</th>
+              <th>Details</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {toys.map((toy) => (
+              <AllToysTableRow key={toy._id} toy={toy}></AllToysTableRow>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

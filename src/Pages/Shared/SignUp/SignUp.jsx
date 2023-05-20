@@ -3,7 +3,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import { useContext } from "react";
 
 const SignUp = () => {
-  const { createToyCarUser } = useContext(AuthContext);
+  const { updateUserProfile, createToyCarUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -19,10 +19,13 @@ const SignUp = () => {
     createToyCarUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
-        form.reset();
-        alert("Registration successfully");
-        navigate("/");
+
+        if (user) {
+          updateUserProfile({ displayName: name, photoURL: img });
+          alert("Registration successfully");
+          form.reset();
+          navigate("/");
+        }
       })
       .catch((error) => {
         console.log(error);

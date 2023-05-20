@@ -30,16 +30,20 @@ const Navbar = () => {
                   All Toys
                 </Link>
               </li>
-              <li>
-                <Link to="/mytoys" className="font-bold">
-                  My Toys
-                </Link>
-              </li>
-              <li>
-                <Link to="/addatoys" className="font-bold">
-                  Add A Toys
-                </Link>
-              </li>
+              {user && (
+                <li>
+                  <Link to="/mytoys" className="font-bold">
+                    My Toys
+                  </Link>
+                </li>
+              )}
+              {user && (
+                <li>
+                  <Link to="/addatoys" className="font-bold">
+                    Add A Toy
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link to="/blogs" className="font-bold">
                   Blogs
@@ -82,16 +86,20 @@ const Navbar = () => {
                 All Toys
               </Link>
             </li>
-            <li>
-              <Link to="/mytoys" className="font-bold">
-                My Toys
-              </Link>
-            </li>
-            <li>
-              <Link to="/addatoy" className="font-bold">
-                Add A Toy
-              </Link>
-            </li>
+            {user && (
+              <li>
+                <Link to="/mytoys" className="font-bold">
+                  My Toys
+                </Link>
+              </li>
+            )}
+            {user && (
+              <li>
+                <Link to="/addatoys" className="font-bold">
+                  Add A Toy
+                </Link>
+              </li>
+            )}
             <li>
               <Link to="/blogs" className="font-bold">
                 Blogs

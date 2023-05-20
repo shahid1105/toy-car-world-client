@@ -13,6 +13,7 @@ const UpdateToy = () => {
     const description = form.description.value;
     const price = form.price.value;
     const img = form.img.value;
+
     const updateToy = {
       availableQuantity,
       description,

@@ -1,29 +1,67 @@
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 
 const Details = () => {
   const details = useLoaderData();
-  console.log({ details });
+  console.log(details);
+
+  const {
+    name,
+    sellerEmail,
+    seller,
+    subCategory,
+    rating,
+    availableQuantity,
+    description,
+    price,
+    img,
+  } = details || {};
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+          <div>
+            <p className="text-xl font-bold text-fuchsia-700">Seller: </p>
+            <p>
+              {" "}
+              <span className="font-bold text-2xl">{seller}</span>
             </p>
+            <p className="text-xl font-bold text-fuchsia-700">Seller Gmail: </p>
+            <p className="font-bold text-2xl">{sellerEmail}</p>
           </div>
+          <div className="text-center lg:text-left">
+            <p className="font-bold text-4xl px-8 mb-4">Description:</p>
+            <p className=" px-8">{description}</p>
+          </div>
+
           <div className="card w-full bg-base-100 shadow-xl">
             <figure>
-              <img
-                src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                alt="Shoes"
-              />
+              <img src={img} alt="Shoes" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">Shoes!</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <h2 className="card-title items-center text-4xl font-bold">
+                {name}
+              </h2>
+              <div className="flex">
+                <p className="text-orange-600 font-bold">
+                  price: <span>${price}</span>
+                </p>
+                <p className="text-orange-600 font-bold">
+                  Quantity: {availableQuantity}
+                </p>
+              </div>
+              <p className="font-bold">Sub Category: {subCategory}</p>
+              <p className="text-center mt-2 mr-2">
+                <Rating
+                  readonly
+                  placeholderRating={rating}
+                  emptySymbol={<FaRegStar></FaRegStar>}
+                  placeholderSymbol={<FaStar className="text-warning"></FaStar>}
+                  fullSymbol={<FaStar></FaStar>}
+                />
+              </p>
             </div>
           </div>
         </div>

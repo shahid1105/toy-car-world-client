@@ -21,7 +21,7 @@ const PhotoGallery = () => {
     <div className="mt-12 mb-36">
       <div className="text-center">
         <h1 className="text-2xl text-violet-500 font-bold">Photo Albums</h1>
-        <p className="text-gray-400 mr-24 ms-24 mt-5">
+        <p className="text-gray-400 md:ps-24 md:pr-24 lg:ps-24 lg:pr-24 mt-5">
           Car toy photo albums offer a delightful glimpse into the world of
           miniature vehicles. These albums showcase a variety of car models,
           featuring vivid colors and intricate designs. Through the captivating

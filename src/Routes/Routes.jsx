@@ -10,11 +10,13 @@ import MyToys from "../Pages/MyToys/MyToys";
 import Details from "../Pages/Details/Details";
 import UpdateToy from "../Pages/MyToys/UpdateToy";
 import ProtectedRoutes from "./ProtectedRoutes";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/addatoy",
+        path: "/addatoys",
         element: (
           <ProtectedRoutes>
             <AddAToy></AddAToy>

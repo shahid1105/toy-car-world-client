@@ -14,7 +14,7 @@ const Banner = () => {
             <h1 className="mb-5 text-5xl font-bold text-violet-300">
               Toy Car World
             </h1>
-            <p className="mb-8 mt-10 ps-24 pr-24 ">
+            <p className="mb-8 mt-10 md:ps-24 md:pr-24 lg:ps-24 lg:pr-24 ">
               Toy cars are miniature replicas of real vehicles, designed for
               children is play and enjoyment. They are typically made of plastic
               or die-cast metal and come in various shapes, sizes, and colors.

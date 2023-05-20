@@ -1,4 +1,8 @@
+import { useLoaderData } from "react-router-dom";
+
 const Details = () => {
+  const details = useLoaderData();
+  console.log({ details });
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -10,7 +14,7 @@ const Details = () => {
               et a id nisi.
             </p>
           </div>
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-full bg-base-100 shadow-xl">
             <figure>
               <img
                 src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"

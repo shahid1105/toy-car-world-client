@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProviders";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, handleGoogleLogin } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className=" bg-base-200">
       <div className="hero-content flex-col">
         <div>
           <h1 className="text-3xl font-bold mb-5 text-blue-600">Login now!</h1>
@@ -60,6 +61,11 @@ const Login = () => {
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
+              </div>
+              <div className="font-extrabold mt-8 flex justify-center">
+                <button onClick={handleGoogleLogin} className="text-3xl">
+                  <FaGoogle />
+                </button>
               </div>
             </form>
             <p className="my-4 text-center">

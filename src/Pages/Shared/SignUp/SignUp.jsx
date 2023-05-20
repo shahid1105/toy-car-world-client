@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../Providers/AuthProviders";
+import { AuthContext } from "../../../Providers/AuthProvider";
 import { useContext } from "react";
 
 const SignUp = () => {
@@ -26,14 +26,14 @@ const SignUp = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="bg-base-200">
       <div className="hero-content flex-col">
         <div>
           <h1 className="text-3xl font-bold mb-5 text-blue-600">
             Please Registration !!!
           </h1>
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
           <div className="card-body">
             <form onSubmit={handleSignUp}>
               <div className="form-control">

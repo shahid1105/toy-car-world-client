@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import { AuthContext } from "../../Providers/AuthProviders";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   const handleAddAToy = (e) => {
     e.preventDefault();
@@ -78,7 +77,7 @@ const AddAToy = () => {
               <span className="label-text">Seller Name</span>
             </label>
             <input
-              defaultValue={user?.name}
+              defaultValue={user?.displayName}
               type="text"
               name="seller"
               placeholder="Seller Name"

@@ -2,11 +2,17 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo/logo.png";
 import profile from "../../../assets/images/profile/profile.png";
 import { useContext } from "react";
-import { AuthContext } from "../../../Providers/AuthProviders";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user?.email);
+  const { logOut, user } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div>
       <div className="navbar bg-base-100 h-28">
@@ -43,11 +49,13 @@ const Navbar = () => {
               <li>
                 {user ? (
                   <>
-                    <span className="text-red-500">{user.email}</span>
+                    <button onClick={handleLogOut} className="font-bold">
+                      Log Out
+                    </button>
                   </>
                 ) : (
-                  <Link>
-                    <button>Login</button>
+                  <Link to="/login">
+                    <button className="font-bold">Login</button>
                   </Link>
                 )}
               </li>
@@ -91,21 +99,38 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/logout" className="font-bold">
-                Log Out
-              </Link>
+              {user ? (
+                <>
+                  <button onClick={handleLogOut} className="font-bold">
+                    Log Out
+                  </button>
+                </>
+              ) : (
+                <Link className="font-bold " to="/signup">
+                  Sign Up
+                </Link>
+              )}
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img src={profile} />
-            </div>
-          </label>
-          <Link to="/login" className="font-bold">
-            Login
-          </Link>
+          {user ? (
+            <>
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={profile} />
+                </div>
+              </label>
+            </>
+          ) : (
+            <>
+              <Link to="/login">
+                <button className="font-bold bg-base-300 ps-4 pr-4 pt-3 pb-3 rounded-xl hover:bg-base-200">
+                  Login
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

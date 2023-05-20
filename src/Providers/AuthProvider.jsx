@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -34,6 +35,19 @@ const AuthProvider = ({ children }) => {
   const createToyCarUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const updatedUser = (name, img) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: img,
+    })
+      .then(() => {
+        console.log("updated user");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const signIn = (email, password) => {
@@ -64,6 +78,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     handleGoogleLogin,
+    updatedUser,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

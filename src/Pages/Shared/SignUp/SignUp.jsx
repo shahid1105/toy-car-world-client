@@ -3,7 +3,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import { useContext } from "react";
 
 const SignUp = () => {
-  const { createToyCarUser } = useContext(AuthContext);
+  const { updatedUser, createToyCarUser } = useContext(AuthContext);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -19,6 +19,7 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        updatedUser(result.user, name, email);
       })
       .catch((error) => {
         console.log(error);

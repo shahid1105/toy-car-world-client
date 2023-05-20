@@ -46,14 +46,15 @@ const router = createBrowserRouter([
       {
         path: "/updateToy/:id",
         element: <UpdateToy></UpdateToy>,
-        loader: (params) =>
-          fetch(`http://localhost:5173/updateToy/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/mytoy/${params.id}`),
       },
 
       {
         path: "/details",
         element: <Details></Details>,
-        loader: (params) => fetch(`http://localhost:5173/details/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/details/${params.id}`),
       },
     ],
   },

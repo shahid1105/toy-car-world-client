@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo/logo.png";
-import profile from "../../../assets/images/profile/profile.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
+  console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -116,9 +116,12 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <label
+                data-tip={user?.displayName}
+                tabIndex={0}
+                className="btn btn-ghost btn-circle avatar tooltip">
                 <div className="w-10 rounded-full">
-                  <img src={profile} />
+                  <img src={user?.photoURL} />
                 </div>
               </label>
             </>

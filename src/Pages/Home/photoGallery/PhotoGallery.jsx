@@ -16,9 +16,16 @@ import policeToys from "../../../assets/images/police-toy/police-toy (1).png";
 import policeToys1 from "../../../assets/images/police-toy/police-toy (2).png";
 import policeToys2 from "../../../assets/images/police-toy/police-toy (3).png";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const PhotoGallery = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
   return (
-    <div className="mt-12 mb-36">
+    <div className="mt-12 mb-36" data-aos="fade-up">
       <div className="text-center">
         <h1 className="text-2xl text-violet-500 font-bold">Photo Albums</h1>
         <p className="text-gray-400 md:ps-24 md:pr-24 lg:ps-24 lg:pr-24 mt-5">
@@ -34,27 +41,27 @@ const PhotoGallery = () => {
       <div className="mt-8">
         <Tabs>
           <TabList>
-            <Tab>
+            <Tab data-aos="fade-right">
               <h1 className="text-xl font-bold text-violet-500">
                 Regular carToys photo
               </h1>
             </Tab>
-            <Tab>
+            <Tab data-aos="fade-right">
               <h1 className="text-xl font-bold text-violet-500">
                 Truck Toys photo
               </h1>
             </Tab>
-            <Tab>
+            <Tab data-aos="fade-right">
               <h1 className="text-xl font-bold text-violet-500">
                 Police carToys photo
               </h1>
             </Tab>
-            <Tab>
+            <Tab data-aos="fade-right">
               <h1 className="text-xl font-bold text-violet-500">
                 Fire truckToys photo
               </h1>
             </Tab>
-            <Tab>
+            <Tab data-aos="fade-right">
               <h1 className="text-xl font-bold text-violet-500">
                 sports Toys photo
               </h1>
@@ -67,6 +74,7 @@ const PhotoGallery = () => {
                 <div className="card w-80 bg-base-100 border-solid border-2 border-indigo-600 mt-10 shadow-2xl">
                   <figure className="px-10 pt-10">
                     <img
+                      data-aos="fade-left"
                       src={regularCarToys}
                       alt="Shoes"
                       className="rounded-xl h-72"
@@ -78,6 +86,7 @@ const PhotoGallery = () => {
                 <div className="card w-80 bg-base-100 border-solid border-2 border-indigo-600 mt-10 shadow-2xl">
                   <figure className="px-10 pt-10">
                     <img
+                      data-aos="fade-up"
                       src={regularCarToys1}
                       alt="Shoes"
                       className="rounded-xl h-72"
@@ -89,6 +98,7 @@ const PhotoGallery = () => {
                 <div className="card w-80 bg-base-100 border-solid border-2 border-indigo-600 mt-10 shadow-2xl">
                   <figure className="px-10 pt-10">
                     <img
+                      data-aos="fade-left"
                       src={regularCarToys2}
                       alt="Shoes"
                       className="rounded-xl h-72"

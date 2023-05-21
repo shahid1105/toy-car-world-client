@@ -1,13 +1,23 @@
 import img from "../../../assets/images/banner/banner.jpg";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const AboutUs = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
   return (
     <div className="bg-base-200 mt-36 rounded-2xl md:flex lg:flex md:justify-evenly lg:justify-evenly">
       <div className="w-1/2">
-        <h1 className="text-5xl ms-10 font-bold md:ms-32 lg:ms-32  mt-16">
+        <h1
+          className="text-5xl ms-10 font-bold md:ms-32 lg:ms-32  mt-16"
+          data-aos="fade-dawn">
           About Us
         </h1>
-        <p className="text-gray-500 ms-6 md:ms-24 lg:ms-24 md:mr-24 lg:mr-24 md:mb-24 lg:mb-24 md:mt-10 lg:mt-10 mb-4">
+        <p
+          className="text-gray-500 ms-6 md:ms-24 lg:ms-24 md:mr-24 lg:mr-24 md:mb-24 lg:mb-24 md:mt-10 lg:mt-10 mb-4"
+          data-aos="fade-up">
           Toy cars are miniature replicas of real vehicles, designed for
           children is play and enjoyment. They are typically made of plastic or
           die-cast metal and come in various shapes, sizes, and colors. Toy cars
@@ -17,7 +27,7 @@ const AboutUs = () => {
           role-playing scenarios with toy cars, fostering creativity, motor
           skills, and cognitive development.
         </p>
-        <div className="flex gap-6 ms-24">
+        <div className="flex gap-6 ms-24" data-aos="fade-left">
           <a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +60,7 @@ const AboutUs = () => {
           </a>
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="w-1/2" data-aos="fade-left">
         <img className="rounded-lg mb-44 mt-24" src={img} alt="" />
       </div>
     </div>

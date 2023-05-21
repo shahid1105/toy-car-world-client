@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import "react-tabs/style/react-tabs.css";
 import SubCategories from "./SubCategory/SubCategories";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Category = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
   const [categorys, setCategory] = useState([]);
 
   const [activeTab, setActiveTab] = useState("TruckToys");
@@ -22,7 +27,7 @@ const Category = () => {
 
   return (
     <>
-      <div className="mt-8">
+      <div className="mt-8" data-aos="fade-up">
         <h2 className="text-center text-5xl font-bold text-orange-400 mb-8">
           Shop by category
         </h2>
@@ -35,6 +40,7 @@ const Category = () => {
         </p>
         <div className="md:flex lg:flex md:gap-6 lg:gap-6 md:justify-center ;lg:justify-center">
           <div
+            data-aos="fade-left"
             onClick={() => handleTabClick("RegularCarToys")}
             className={`btn btn-accent text-white font-bold ${
               activeTab == "RegularCarToys" ? " bg-red-400 text-white" : ""
@@ -42,6 +48,7 @@ const Category = () => {
             RegularCarToys
           </div>
           <div
+            data-aos="fade-left"
             onClick={() => handleTabClick("TruckToys")}
             className={`btn btn-accent text-white font-bold ${
               activeTab == "TruckToys" ? " bg-red-400 text-white" : ""
@@ -56,6 +63,7 @@ const Category = () => {
             PoliceCarToys
           </div>
           <div
+            data-aos="fade-right"
             onClick={() => handleTabClick("FireTruckToys")}
             className={`btn btn-accent text-white font-bold ${
               activeTab == "FireTruckToys" ? " bg-red-400 text-white" : ""
@@ -63,6 +71,7 @@ const Category = () => {
             FireTruckToys
           </div>
           <div
+            data-aos="fade-right"
             onClick={() => handleTabClick("sportsToys")}
             className={`btn btn-accent text-white font-bold ${
               activeTab == "sportsToys" ? " bg-red-400 text-white" : ""
@@ -71,7 +80,9 @@ const Category = () => {
           </div>
         </div>
         <div className="mt-24">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 md:gap-14 lg:gap-14">
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 md:gap-14 lg:gap-14"
+            data-aos="fade-right">
             {categorys.map((category) => (
               <SubCategories
                 key={category._id}

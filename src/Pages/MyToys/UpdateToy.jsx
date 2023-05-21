@@ -5,7 +5,7 @@ const UpdateToy = () => {
   const myToy = useLoaderData();
   useTitle("myToys | updateToy");
 
-  const { _id, description, availableQuantity, price, img } = myToy || {};
+  const { _id, description, availableQuantity, price } = myToy || {};
 
   const handleUpdateAToy = (e) => {
     e.preventDefault();
@@ -68,32 +68,20 @@ const UpdateToy = () => {
               className="input input-bordered"
             />
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
-            </label>
-            <input
-              defaultValue={img}
-              type="text"
-              name="img"
-              placeholder="Photo URL"
-              className="input input-bordered"
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Details Description</span>
-            </label>
-            <textarea
-              defaultValue={description}
-              placeholder="Details Description"
-              type="text"
-              name="description"
-              id=""
-              cols="10"
-              rows="5"
-              className="border-spacing-1 shadow-md p-6"></textarea>
-          </div>
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Details Description</span>
+          </label>
+          <textarea
+            defaultValue={description}
+            placeholder="Details Description"
+            type="text"
+            name="description"
+            id=""
+            cols="10"
+            rows="5"
+            className="border-spacing-1 shadow-md p-6"></textarea>
         </div>
         <div className="form-control mt-6">
           <input

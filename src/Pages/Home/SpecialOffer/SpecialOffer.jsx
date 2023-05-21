@@ -18,7 +18,6 @@ const SpecialOffer = () => {
   }, []);
 
   const sliceOffers = offers.slice(1, 7);
-  console.log(sliceOffers);
 
   return (
     <div data-aos="fade-up">

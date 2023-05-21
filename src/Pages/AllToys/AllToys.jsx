@@ -10,15 +10,17 @@ const AllToys = () => {
   useEffect(() => {
     fetch("http://localhost:5000/alltoys")
       .then((res) => res.json())
-      .then((data) => setToys(data));
+      .then((data) => {
+        setToys(data);
+      });
   }, []);
 
   const handleSearch = () => {
     fetch(`http://localhost:5000/search/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setToys(data);
+        console.log(data);
       });
   };
 

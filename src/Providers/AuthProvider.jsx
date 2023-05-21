@@ -1,11 +1,9 @@
 import { createContext, useEffect, useState } from "react";
 import {
-  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -18,20 +16,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const [loading, setLoading] = useState(true);
-
-  const provider = new GoogleAuthProvider();
-
-  const handleGoogleLogin = () => {
-    setLoading(true);
-    return signInWithPopup(auth, provider)
-      .then((result) => {
-        const googleUser = result.user;
-        console.log(googleUser);
-      })
-      .catch((error) => {
-        console.log("error", error.message);
-      });
-  };
 
   const createToyCarUser = (email, password) => {
     setLoading(true);
@@ -63,12 +47,13 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const authInfo = {
+    auth,
     user,
     loading,
+    setLoading,
     createToyCarUser,
     signIn,
     logOut,
-    handleGoogleLogin,
     updateUserProfile,
   };
   return (

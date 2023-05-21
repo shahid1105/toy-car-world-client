@@ -3,14 +3,31 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 import useTitle from "../../hooks/useTitle";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const Login = () => {
-  const { signIn, handleGoogleLogin } = useContext(AuthContext);
+  const { auth, setLoading, signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   useTitle("login");
 
   const from = location.state?.from?.pathname || "/";
+
+  const provider = new GoogleAuthProvider();
+
+  const handleGoogleLogin = () => {
+    setLoading(true);
+    return signInWithPopup(auth, provider)
+      .then((result) => {
+        const googleUser = result.user;
+        console.log(googleUser);
+        alert("login successfully");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();

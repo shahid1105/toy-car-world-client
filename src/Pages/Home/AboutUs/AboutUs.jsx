@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const AboutUs = () => {
   useEffect(() => {
-    Aos.init({ duration: 3000 });
+    Aos.init({ duration: 2000 });
   }, []);
   return (
     <div className="bg-base-200 mt-36 rounded-2xl md:flex lg:flex md:justify-evenly lg:justify-evenly">

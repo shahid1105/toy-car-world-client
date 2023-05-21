@@ -1,11 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { useContext } from "react";
+import useTitle from "../../../hooks/useTitle";
 
 const SignUp = () => {
   const { updateUserProfile, createToyCarUser } = useContext(AuthContext);
-
   const navigate = useNavigate();
+
+  useTitle("signUp");
 
   const handleSignUp = (e) => {
     e.preventDefault();

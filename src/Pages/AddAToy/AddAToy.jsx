@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
+  useTitle("addAToy");
 
   const handleAddAToy = (e) => {
     e.preventDefault();

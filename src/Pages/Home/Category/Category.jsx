@@ -5,7 +5,7 @@ import SubCategories from "./SubCategory/SubCategories";
 const Category = () => {
   const [categorys, setCategory] = useState([]);
 
-  const [activeTab, setActiveTab] = useState("RegularCarToys");
+  const [activeTab, setActiveTab] = useState("TruckToys");
 
   useEffect(() => {
     fetch(`http://localhost:5000/alltoys/${activeTab}`)
@@ -70,12 +70,14 @@ const Category = () => {
             sportsToys
           </div>
         </div>
-        <div>
-          {categorys.map((category) => (
-            <SubCategories
-              key={category._id}
-              category={category}></SubCategories>
-          ))}
+        <div className="mt-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 md:gap-14 lg:gap-14">
+            {categorys.map((category) => (
+              <SubCategories
+                key={category._id}
+                category={category}></SubCategories>
+            ))}
+          </div>
         </div>
       </div>
     </>

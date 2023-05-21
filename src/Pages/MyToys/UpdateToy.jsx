@@ -23,7 +23,7 @@ const UpdateToy = () => {
       img,
     };
 
-    fetch(`http://localhost:5000/mytoy/${_id}`, {
+    fetch(`https://toy-car-world-server.vercel.app/mytoy/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

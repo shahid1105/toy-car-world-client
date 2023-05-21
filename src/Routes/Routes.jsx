@@ -62,7 +62,7 @@ const router = createBrowserRouter([
           </ProtectedRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/mytoy/${params.id}`),
+          fetch(`https://toy-car-world-server.vercel.app/mytoy/${params.id}`),
       },
 
       {
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
           </ProtectedRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/details/${params.id}`),
+          fetch(`https://toy-car-world-server.vercel.app/details/${params.id}`),
       },
     ],
   },

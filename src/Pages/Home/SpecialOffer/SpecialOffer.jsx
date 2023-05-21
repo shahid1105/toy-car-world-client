@@ -10,7 +10,7 @@ const SpecialOffer = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltoys")
+    fetch("https://toy-car-world-server.vercel.app/alltoys")
       .then((res) => res.json())
       .then((data) => {
         setOffer(data);

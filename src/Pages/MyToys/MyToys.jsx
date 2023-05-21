@@ -9,7 +9,7 @@ const MyToys = () => {
   useTitle("myToys");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mytoys/${user?.email}`)
+    fetch(`https://toy-car-world-server.vercel.app/mytoys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [user]);
@@ -17,7 +17,7 @@ const MyToys = () => {
   const handleDelete = (_id) => {
     const proceed = confirm("Are you sure you want to delete");
     if (proceed) {
-      fetch(`http://localhost:5000/mytoys/${_id}`, {
+      fetch(`https://toy-car-world-server.vercel.app/mytoys/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
